@@ -1,36 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="091e361b-ba68-42fd-a6ba-ecef93347511" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-reflect.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-test-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-test.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Acucar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Bau.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Cafe.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Chave.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Coroa.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Espada.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/KotlinCastleKt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/META-INF/KotlinCastle.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Objeto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Posicao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Tabuleiro.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Vela.class" afterDir="false" />
+    <list default="true" id="091e361b-ba68-42fd-a6ba-ecef93347511" name="Default Changelist" comment="alguma coisa">
+      <change beforePath="$PROJECT_DIR$/src/KotlinCastle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/KotlinCastle.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/KotlinCastle.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="52" column="16" lean-forward="true" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+            <state relative-caret-position="51">
+              <caret line="124" column="49" selection-start-line="124" selection-start-column="49" selection-end-line="124" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -60,7 +32,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="FFBranch" />
+        <entry key="$PROJECT_DIR$" value="9a7d00d3c80e09560233926674dc87b6fc00c001" />
       </map>
     </option>
     <favorite-branches>
@@ -70,7 +42,6 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="FSBranch" />
-                <branch-info repo="$PROJECT_DIR$" source="FFBranch" />
               </list>
             </value>
           </entry>
@@ -187,7 +158,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555090342389</updated>
-      <workItem from="1555090344887" duration="2330000" />
+      <workItem from="1555090344887" duration="2634000" />
     </task>
     <task id="LOCAL-00001" summary="alguma coisa">
       <created>1555090685621</created>
@@ -210,14 +181,22 @@
       <option name="project" value="LOCAL" />
       <updated>1555092409879</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="alguma coisa">
+      <created>1555092974583</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555092974583</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2330000" />
+    <option name="totallyTimeSpent" value="2634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -263,8 +242,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/KotlinCastle.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="52" column="16" lean-forward="true" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+        <state relative-caret-position="51">
+          <caret line="124" column="49" selection-start-line="124" selection-start-column="49" selection-end-line="124" selection-end-column="49" />
         </state>
       </provider>
     </entry>

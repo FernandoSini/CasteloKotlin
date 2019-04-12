@@ -122,7 +122,7 @@ fun pegar() {
             println("Não existe objeto aqui!!")
         }
     }
-    return println("Objteos pegados: $listaCarga,$listaCarga")
+    return println("Objteos pegados: $listaCarga")
 
 }
 
