@@ -122,7 +122,8 @@ fun pegar() {
             println("Não existe objeto aqui!!")
         }
     }
-    return println("Objteos pegados: $listaCarga")
+    return println("Objteos pegados: $listaCarga,$listaCarga")
+
 }
 
 //representa o tabuleiro 4 x4
