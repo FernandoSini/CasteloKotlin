@@ -7,7 +7,7 @@ const val ALTURA = 4  // Altura do tabuleiro
 var x: Int = 2 //posição inicial do jogador X
 var y: Int = 3 //posição inicial do jogador y
 var tabuleiro: Tabuleiro = Tabuleiro() //objeto tabuleiro
-var listaCarga: MutableList<Objeto>? = ArrayList<Objeto>()
+var listaCarga: MutableList<Objeto> = ArrayList<Objeto>()
 
 fun main(args: Array<String>) {
     println(WELCOME)
@@ -76,7 +76,6 @@ fun getPalavras(comando: String?): List<String> {
 
 //Função para converterMaiusculo que recebe List<String> retorna List<String>
 //com todas as palavras em maiusculo. Pode fazer direto no GETPALAVRAS!!
-
 fun converterMaiusculo(comando: List<String>): List<String> {
     val ret: MutableList<String> = mutableListOf<String>()
 
@@ -103,26 +102,27 @@ fun interpretar(palavras: List<String>) {
 //função ver para verificar os objetos na posicao em que ele se encontra
 fun ver() {
 
-    for (v in tabuleiro.getPosicao(x, y).listaObjeto) {
-        println(v.desc)
+    for (obj in tabuleiro.getPosicao(x, y).listaObjeto) {
+        println(obj.desc)
     }
 
 }
 
 //função para pegar os objetos
 fun pegar() {
+    listaCarga = tabuleiro.getPosicao(x, y).listaObjeto
+    for (obj in tabuleiro.getPosicao(x, y).listaObjeto) {
 
-    for (o in tabuleiro.getPosicao(x, y).listaObjeto) {
-        if (tabuleiro.getPosicao(x, y).listaObjeto.size > 3) {
+        if (listaCarga.size > 3) {
             print("Você Já está carregando 3 objetos ")
-        } else if (o == tabuleiro.getPosicao(x, y).listaObjeto) {
-            listaCarga = tabuleiro.getPosicao(x, y).listaObjeto
-            tabuleiro.getPosicao(x, y).removeObjeto(o)
-        } else if (tabuleiro.getPosicao(x, y).listaObjeto.size == null) {
+        } else if (listaCarga.contains(obj)) {
+            listaCarga!!.add(obj)
+            tabuleiro.getPosicao(x, y).removeObjeto(obj)
+        } else if (tabuleiro.getPosicao(x, y).listaObjeto.equals(null)) {
             println("Não existe objeto aqui!!")
         }
     }
-    return println("Objteos pegados: $listaCarga")
+    println("Objteos pegados: ${listaCarga}")
 
 }
 
