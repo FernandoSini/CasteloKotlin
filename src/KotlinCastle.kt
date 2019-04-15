@@ -92,8 +92,6 @@ fun interpretar(palavras: List<String>) {
     if (palavras[0] == "IR") {
         ir(palavras)
         ver()
-
-
     } else if (palavras.contains("CARGA")) {
         carga()
 
