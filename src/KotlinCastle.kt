@@ -92,6 +92,12 @@ fun interpretar(palavras: List<String>) {
     if (palavras[0] == "IR") {
         ir(palavras)
         ver()
+
+
+    } else if (palavras.contains("CARGA")) {
+        carga()
+
+    } else if (palavras.contains("PEGAR")) {
         pegar()
     } else {
         println("Comando Invalido")
@@ -103,27 +109,30 @@ fun interpretar(palavras: List<String>) {
 fun ver() {
 
     for (obj in tabuleiro.getPosicao(x, y).listaObjeto) {
-        println(obj.desc)
+        println("Objeto: " + obj.desc)
     }
 
 }
 
 //função para pegar os objetos
 fun pegar() {
-    listaCarga = tabuleiro.getPosicao(x, y).listaObjeto
-    for (obj in tabuleiro.getPosicao(x, y).listaObjeto) {
 
-        if (listaCarga.size > 3) {
-            print("Você Já está carregando 3 objetos ")
-        } else if (listaCarga.contains(obj)) {
-            listaCarga!!.add(obj)
-            tabuleiro.getPosicao(x, y).removeObjeto(obj)
-        } else if (tabuleiro.getPosicao(x, y).listaObjeto.equals(null)) {
+    for (obj in tabuleiro.getPosicao(x, y).listaObjeto) {
+        if (listaCarga.size <= 3) {
+            listaCarga.add(obj)
+
+        } else if (listaCarga.size > 3) {
+            println("Você já está carregando 3 objetos remova 1 deles")
+
+        } else {
             println("Não existe objeto aqui!!")
         }
     }
-    println("Objteos pegados: ${listaCarga}")
 
+}
+
+fun carga() {
+    println("Objetos carregados: $listaCarga")
 }
 
 //representa o tabuleiro 4 x4
@@ -198,22 +207,21 @@ class Posicao(
 
 
     //Função para adicionar um objeto em uma lista de objetos
-    fun addObjeto(objeto: Objeto): MutableList<Objeto> {
+    fun addObjeto(objeto: Objeto) {
 
         listaObjeto.add(objeto)
 
 
-        return listaObjeto
     }
 
     //Função para remover um objeto de uma lista
-    fun removeObjeto(objeto: Objeto): MutableList<Objeto> {
+    fun removeObjeto(objeto: Objeto) {
         listaObjeto.remove(objeto)
-        return listaObjeto
+
     }
 
-
 }
+
 
 abstract class Objeto constructor(desc: String) {
     var desc: String? = desc
