@@ -9,6 +9,7 @@ var y: Int = 3 //posição inicial do jogador y
 var tabuleiro: Tabuleiro = Tabuleiro() //objeto tabuleiro
 var listaCarga: MutableList<Objeto> = ArrayList<Objeto>()
 
+
 fun main(args: Array<String>) {
     println(WELCOME)
     println(OBJETIVO)
@@ -97,6 +98,9 @@ fun interpretar(palavras: List<String>) {
 
     } else if (palavras.contains("PEGAR")) {
         pegar()
+    } else if (palavras.contains("SOLTAR")) {
+        soltar()
+
     } else {
         println("Comando Invalido")
     }
@@ -128,6 +132,22 @@ fun pegar() {
     }
 
 }
+
+/*função para soltar os objetos*/
+fun soltar() {
+
+    for (obj in tabuleiro.getPosicao(x, y).listaObjeto)
+        if (listaCarga.contains(obj)) {
+            listaCarga.remove(obj)
+            println("$obj solto")
+
+        } else {
+            println("Você não possui esse objeto")
+        }
+
+
+}
+
 
 fun carga() {
     println("Objetos carregados: $listaCarga")
