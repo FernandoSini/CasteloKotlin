@@ -123,7 +123,7 @@ fun pegar() {
         if (listaCarga.size <= 3) {
             listaCarga.add(obj)
 
-        } else if (listaCarga.size > 3) {
+        } else if (listaCarga!!.size > 3) {
             println("Você já está carregando 3 objetos remova 1 deles")
 
         } else {
@@ -140,11 +140,9 @@ fun soltar() {
         if (listaCarga.contains(obj)) {
             listaCarga.remove(obj)
             println("$obj solto")
-
         } else {
             println("Você não possui esse objeto")
         }
-
 
 }
 

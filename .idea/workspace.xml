@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae6597f2-cd05-4f78-87e7-56920dc3fe92" name="Default Changelist" comment="Alguma Coisa 16/04">
+    <list default="true" id="ae6597f2-cd05-4f78-87e7-56920dc3fe92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Acucar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Acucar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Bau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Bau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Cafe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Cafe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Chave.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Chave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Coroa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Coroa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Espada.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Espada.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/KotlinCastleKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/KotlinCastleKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Objeto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Objeto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Posicao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Posicao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Tabuleiro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Tabuleiro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinCastle/Vela.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinCastle/Vela.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/KotlinCastle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/KotlinCastle.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/KotlinCastle.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="136" column="33" selection-start-line="136" selection-start-column="33" selection-end-line="136" selection-end-column="33" />
+            <state relative-caret-position="140">
+              <caret line="144" column="9" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -168,7 +158,7 @@
       <workItem from="1555090344887" duration="2634000" />
       <workItem from="1555592456955" duration="345000" />
       <workItem from="1555593248046" duration="1169000" />
-      <workItem from="1555594653711" duration="6320000" />
+      <workItem from="1555594653711" duration="8336000" />
     </task>
     <task id="LOCAL-00001" summary="alguma coisa">
       <created>1555090685621</created>
@@ -198,11 +188,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555092974583</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="UPDATE 18/04 - Adicionado as funções soltar e carga">
+      <created>1555619264916</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555619264916</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10689000" />
+    <option name="totallyTimeSpent" value="12705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -217,17 +214,17 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50201344" side_tool="true" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5026846" side_tool="true" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -244,15 +241,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="alguma coisa" />
-    <option name="LAST_COMMIT_MESSAGE" value="alguma coisa" />
+    <MESSAGE value="UPDATE 18/04 - Adicionado as funções soltar e carga" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATE 18/04 - Adicionado as funções soltar e carga" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/KotlinCastle.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="136" column="33" selection-start-line="136" selection-start-column="33" selection-end-line="136" selection-end-column="33" />
+        <state relative-caret-position="140">
+          <caret line="144" column="9" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
         </state>
       </provider>
     </entry>
