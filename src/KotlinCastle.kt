@@ -7,8 +7,13 @@ const val ALTURA = 4  // Altura do tabuleiro
 var x: Int = 2 //posição inicial do jogador X
 var y: Int = 3 //posição inicial do jogador y
 var tabuleiro: Tabuleiro = Tabuleiro() //objeto tabuleiro
-var listaCarga: MutableList<Objeto> = ArrayList<Objeto>()
-
+var listaCarga: MutableList<Objeto> = mutableListOf()
+var vela = Vela()
+var espada = Espada()
+var chave = Chave()
+var coroa = Coroa()
+var cafe = Cafe()
+var bau = Bau()
 
 fun main(args: Array<String>) {
     println(WELCOME)
@@ -94,10 +99,15 @@ fun interpretar(palavras: List<String>) {
         ir(palavras)
         ver()
     } else if (palavras.contains("CARGA")) {
-        carga()
+        if (listaCarga.size == 0) {
+            println("Não há objetos para serem carregados")
+        } else {
+            carga()
 
+        }
     } else if (palavras.contains("PEGAR")) {
         pegar()
+
     } else if (palavras.contains("SOLTAR")) {
         soltar()
 
@@ -118,20 +128,22 @@ fun ver() {
 
 //função para pegar os objetos
 fun pegar() {
-
     for (obj in tabuleiro.getPosicao(x, y).listaObjeto) {
-        if (listaCarga.size <= 3) {
-            listaCarga.add(obj)
 
-        } else if (listaCarga!!.size > 3) {
+        if (listaCarga.size > 3 || obj.equals(3)) {
             println("Você já está carregando 3 objetos remova 1 deles")
 
-        } else {
-            println("Não existe objeto aqui!!")
-        }
-    }
+        } else if (listaCarga.size <= 3 || obj.equals(tabuleiro.getPosicao(x, y).listaObjeto)) {
+            listaCarga.add(obj)
+            println("${obj.desc} sendo carregado")
 
+        } else {
+            println("não exite objeto aki")
+        }
+
+    }
 }
+
 
 /*função para soltar os objetos*/
 fun soltar() {
@@ -139,7 +151,7 @@ fun soltar() {
     for (obj in tabuleiro.getPosicao(x, y).listaObjeto)
         if (listaCarga.contains(obj)) {
             listaCarga.remove(obj)
-            println("$obj solto")
+            println("${obj.desc} solto")
         } else {
             println("Você não possui esse objeto")
         }
@@ -148,7 +160,10 @@ fun soltar() {
 
 
 fun carga() {
-    println("Objetos carregados: $listaCarga")
+    for (obj in listaCarga) {
+        println("Objetos carregados: ${obj.desc}")
+    }
+
 }
 
 //representa o tabuleiro 4 x4
@@ -186,7 +201,7 @@ class Tabuleiro {
     )
 
     fun getPosicao(x: Int, y: Int): Posicao {
-        return tabuleiro[x][y]
+        return tabuleiro[y][x]
     }
 
     init {
@@ -224,7 +239,6 @@ class Posicao(
 
     //Função para adicionar um objeto em uma lista de objetos
     fun addObjeto(objeto: Objeto) {
-
         listaObjeto.add(objeto)
 
 
@@ -246,6 +260,7 @@ abstract class Objeto constructor(desc: String) {
 }
 
 class Vela() : Objeto(desc = "Vela") {
+
 }
 
 
