@@ -8,12 +8,7 @@ var x: Int = 2 //posição inicial do jogador X
 var y: Int = 3 //posição inicial do jogador y
 var tabuleiro: Tabuleiro = Tabuleiro() //objeto tabuleiro
 var listaCarga: MutableList<Objeto> = mutableListOf()
-var vela = Vela()
-var espada = Espada()
-var chave = Chave()
-var coroa = Coroa()
-var cafe = Cafe()
-var bau = Bau()
+var fim = true
 
 fun main(args: Array<String>) {
     println(WELCOME)
@@ -38,31 +33,36 @@ fun main(args: Array<String>) {
 //função que irá receber a lista de comando e atualizar as coordenadas do player no tabuleiro
 fun ir(palavras: List<String>) {
 
-    if (palavras.contains("NORTE")) {
+    if (palavras.contains("NORTE") && tabuleiro.getPosicao(x, y).norte) {
         if (y > 0) {
             y -= 1
             println("Posição do tabuleiro: $x, $y")
         } else {
             println("Movimento não Permitido!")
         }
-    } else if (palavras.contains("SUL")) {
+    } else if (palavras.contains("SUL") && tabuleiro.getPosicao(x, y).sul) {
         if (y < ALTURA - 1) {
             y += 1
             println("Posição do tabuleiro: $x, $y")
         } else {
             println("Movimento não permitido!")
         }
-    } else if (palavras.contains("LESTE")) {
+    } else if (palavras.contains("LESTE") && tabuleiro.getPosicao(x, y).leste) {
         if (x < LARGURA - 1) {
             x += 1
             println("Posição do tabuleiro: $x, $y")
         } else {
             println("Movimento não permitido!")
         }
-    } else if (palavras.contains("OESTE")) {
+    } else if (palavras.contains("OESTE") && tabuleiro.getPosicao(x, y).oeste) {
         if (x > 0) {
             x -= 1
             println("Posição do tabuleiro: $x, $y")
+        } else if (x == 0 && y == 2 && listaCarga.contains(Vela())) {
+            println("Você possui uma vela para iluminar o quarto escuro! Aproveite para explorá-lo. ")
+
+        } else if (x == 0 && y == 2 && !listaCarga.contains(Vela())) {
+            println("Você entrou em um quarto escuro sem a vela e quebrou a perna! ")
         } else {
             println("Movimento não permitido!")
         }
@@ -138,7 +138,7 @@ fun pegar() {
             println("${obj.desc} sendo carregado")
 
         } else {
-            println("não exite objeto aki")
+            println("não exite objeto aqui")
         }
 
     }
@@ -217,7 +217,6 @@ class Tabuleiro {
 
 }
 
-
 //Classe para armazenar 16 posições com um atributo descrição e um metodo get
 
 class Posicao(
@@ -233,7 +232,7 @@ class Posicao(
     var norte = _norte
     var sul = _sul
     var leste = _leste
-    var oeste_ = _oeste
+    var oeste = _oeste
     var listaObjeto = mutableListOf<Objeto>()
 
 
