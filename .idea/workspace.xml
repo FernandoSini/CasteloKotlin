@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/KotlinCastle.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+            <state relative-caret-position="38">
+              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -162,7 +162,7 @@
       <workItem from="1555090344887" duration="2634000" />
       <workItem from="1555592456955" duration="345000" />
       <workItem from="1555593248046" duration="1169000" />
-      <workItem from="1555594653711" duration="25470000" />
+      <workItem from="1555594653711" duration="53041000" />
     </task>
     <task id="LOCAL-00001" summary="alguma coisa">
       <created>1555090685621</created>
@@ -206,11 +206,25 @@
       <option name="project" value="LOCAL" />
       <updated>1555621140097</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="UPDATE 19/04 - Atualização das funções pegar e soltar">
+      <created>1555707129065</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555707129065</updated>
+    </task>
+    <task id="LOCAL-00008" summary="little changes">
+      <created>1555775878983</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555775878983</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29839000" />
+    <option name="totallyTimeSpent" value="57410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -254,15 +268,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="alguma coisa" />
     <MESSAGE value="UPDATE 18/04 - Adicionado as funções soltar e carga" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATE 18/04 - Adicionado as funções soltar e carga" />
+    <MESSAGE value="UPDATE 19/04 - Atualização das funções pegar e soltar" />
+    <MESSAGE value="little changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="little changes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/KotlinCastle.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+        <state relative-caret-position="38">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
         </state>
       </provider>
     </entry>

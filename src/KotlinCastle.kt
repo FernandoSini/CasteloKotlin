@@ -54,20 +54,22 @@ fun ir(palavras: List<String>) {
         } else {
             println("Movimento não permitido!")
         }
-    } else if (palavras.contains("OESTE") && tabuleiro.getPosicao(x, y).oeste) {
-        if (x > 0) {
-            x -= 1
-            println("Posição do tabuleiro: $x, $y")
-        } else if (x == 0 && y == 2 && listaCarga.contains(Vela())) {
-            println("Você possui uma vela para iluminar o quarto escuro! Aproveite para explorá-lo. ")
+    } else if (x > 0 && palavras.contains("OESTE") && tabuleiro.getPosicao(x, y).oeste) {
+        x -= 1
+        println("Posição do tabuleiro: $x, $y")
+        if (x == 0 && y == 2) {
+            if (listaCarga.contains(Vela())) {
+                println("Você possui uma vela para iluminar o quarto escuro! Aproveite para explorá-lo. ")
+            } else {
+                println("Você entrou em um quarto escuro sem a vela e quebrou a perna! ")
+                fim = false
+                return
 
-        } else if (x == 0 && y == 2 && !listaCarga.contains(Vela())) {
-            println("Você entrou em um quarto escuro sem a vela e quebrou a perna! ")
-        } else {
-            println("Movimento não permitido!")
+            }
         }
+
     } else {
-        println("Erro!")
+        println("Movimento não permitido!")
     }
     println(tabuleiro.getPosicao(x, y).descricao)
 
@@ -111,6 +113,8 @@ fun interpretar(palavras: List<String>) {
     } else if (palavras.contains("SOLTAR")) {
         soltar()
 
+    } else if (palavras.contains("ABRIR")) {
+        abrir()
     } else {
         println("Comando Invalido")
     }
@@ -164,6 +168,21 @@ fun carga() {
         println("Objetos carregados: ${obj.desc}")
     }
 
+}
+
+fun abrir() {
+    if (x == 3 && y == 3) {
+        if (listaCarga.contains(Chave())) {
+            println("Abrindo o baú!")
+            println("Existe um pacote de Açucar dentro do baú")
+            tabuleiro.getPosicao(3, 3).addObjeto(Acucar())
+
+        } else if (x == 3 && y == 3 && Chave() !in listaCarga) {
+            println("Você não tem as chaves para abrir o baú!")
+        }
+    } else {
+        println("Não existe nada para abrir aqui!")
+    }
 }
 
 //representa o tabuleiro 4 x4
