@@ -185,6 +185,28 @@ fun abrir() {
     }
 }
 
+fun atacar() {
+    if (x == 3 && y == 1) {
+
+        if (listaCarga.contains(Espada())) {
+            print("Goblins são muito bons com espadas! Após uma longa batalha você levou a pior...")
+        } else {
+            print("Atacar um Goblin sem	uma	espada é sentença de morte... Você morreu!")
+        }
+        if (listaCarga.contains(Cafe())) {
+            println("Você deu café para o Goblin mas estava amargo! Ele gosta de café doce! Ficou furioso e você levou a pior…")
+        } else {
+            print("Você não possui um café")
+        }
+        if (listaCarga.contains(Espada()) && listaCarga.contains(Cafe()) && listaCarga.contains(Acucar())) {
+            print("O Golbin se distraiu tomando o café doce! Você aproveitou e acabou com ele! Caminho livre!")
+        } else {
+            println("Falta algum item")
+        }
+    } else {
+        print("Não existe nada para atacar aqui!")
+    }
+}
 //representa o tabuleiro 4 x4
 
 class Tabuleiro {
