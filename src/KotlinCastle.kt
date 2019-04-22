@@ -8,6 +8,7 @@ var x: Int = 2 //posição inicial do jogador X
 var y: Int = 3 //posição inicial do jogador y
 var tabuleiro: Tabuleiro = Tabuleiro() //objeto tabuleiro
 var listaCarga: MutableList<Objeto> = mutableListOf()
+var goblin = true
 var fim = true
 
 fun main(args: Array<String>) {
@@ -35,8 +36,13 @@ fun ir(palavras: List<String>) {
 
     if (palavras.contains("NORTE") && tabuleiro.getPosicao(x, y).norte) {
         if (y > 0) {
+            if (x == 3 && y == 1 && goblin) {
+                print("Goblin: Você não irá sair!!!")
+                return
+            }
             y -= 1
             println("Posição do tabuleiro: $x, $y")
+
         } else {
             println("Movimento não Permitido!")
         }
@@ -115,6 +121,11 @@ fun interpretar(palavras: List<String>) {
 
     } else if (palavras.contains("ABRIR")) {
         abrir()
+    } else if (palavras.contains("ATACAR")) {
+        atacar()
+    } else if (listaCarga.contains(Coroa())) {
+        fimDeJogo(true)
+
     } else {
         println("Comando Invalido")
     }
@@ -205,6 +216,14 @@ fun atacar() {
         }
     } else {
         print("Não existe nada para atacar aqui!")
+    }
+}
+
+fun fimDeJogo(fim: Boolean) {
+    if (fim) {
+        print("Fim de jogo! Você conseguiu pegar a coroa!")
+    } else {
+        print("Pegue a coroa para finalizar o jogo!")
     }
 }
 //representa o tabuleiro 4 x4
