@@ -64,12 +64,20 @@ fun ir(palavras: List<String>) {
         x -= 1
         println("Posição do tabuleiro: $x, $y")
         if (x == 0 && y == 2) {
-            if (listaCarga.contains(Vela())) {
+
+
+            var temVela = false
+            for (obj in listaCarga) {
+
+                temVela = (obj is Vela)
+            }
+
+
+            if (temVela) {
                 println("Você possui uma vela para iluminar o quarto escuro! Aproveite para explorá-lo. ")
             } else {
                 println("Você entrou em um quarto escuro sem a vela e quebrou a perna! ")
-                fim = false
-                return
+
 
             }
         }
@@ -149,6 +157,7 @@ fun pegar() {
             println("Você já está carregando 3 objetos remova 1 deles")
 
         } else if (listaCarga.size <= 3 || obj.equals(tabuleiro.getPosicao(x, y).listaObjeto)) {
+            println(obj)
             listaCarga.add(obj)
             println("${obj.desc} sendo carregado")
 
@@ -176,6 +185,7 @@ fun soltar() {
 
 fun carga() {
     for (obj in listaCarga) {
+        println(obj)
         println("Objetos carregados: ${obj.desc}")
     }
 
