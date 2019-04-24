@@ -60,32 +60,39 @@ fun ir(palavras: List<String>) {
         } else {
             println("Movimento não permitido!")
         }
-    } else if (x > 0 && palavras.contains("OESTE") && tabuleiro.getPosicao(x, y).oeste) {
-        x -= 1
-        println("Posição do tabuleiro: $x, $y")
-        if (x == 0 && y == 2) {
+    } else if (palavras.contains("OESTE") && tabuleiro.getPosicao(x, y).oeste) {
+        if (x > 0) {
+            x -= 1
+            println("Posição do tabuleiro: $x, $y")
 
-
-            var temVela = false
-            for (obj in listaCarga) {
-
-                temVela = (obj is Vela)
-            }
-
-
-            if (temVela) {
-                println("Você possui uma vela para iluminar o quarto escuro! Aproveite para explorá-lo. ")
-            } else {
-                println("Você entrou em um quarto escuro sem a vela e quebrou a perna! ")
-
-
-            }
-        }
+        } else {
+            println("Movimento não permitido!")
+    }
 
     } else {
-        println("Movimento não permitido!")
+        println("Erro !")
     }
+
     println(tabuleiro.getPosicao(x, y).descricao)
+
+
+
+    if (x == 0 && y == 2) {
+        var temVela = false
+        for (obj in listaCarga) {
+
+            temVela = (obj is Vela)
+            if (temVela) {
+                break
+            }
+        }
+        if (temVela) {
+            println("Você possui uma vela para iluminar o quarto escuro! Aproveite para explorá-lo. ")
+        } else {
+            println("Você entrou em um quarto escuro sem a vela e quebrou a perna! ")
+
+        }
+    }
 
 /*println("Indo...")*/
 }
@@ -185,7 +192,7 @@ fun soltar() {
 
 fun carga() {
     for (obj in listaCarga) {
-        println(obj)
+
         println("Objetos carregados: ${obj.desc}")
     }
 
@@ -241,14 +248,14 @@ fun fimDeJogo(fim: Boolean) {
 class Tabuleiro {
     var tabuleiro = arrayOf<Array<Posicao>>(
         arrayOf<Posicao>(
-            Posicao("Você está na cozinha", _sul = true),
-            Posicao("Você está na cozinha", _sul = true, _leste = true),
+            Posicao("Você está na cozinha 1", _sul = true),
+            Posicao("Você está na cozinha 2", _sul = true, _leste = true),
             Posicao("Você está no corredor interno", _oeste = true, _sul = true),
             Posicao("Você está na sala do trono", _sul = true)
         ),
         arrayOf<Posicao>(
-            Posicao("Você está na cozinha", _leste = true),
-            Posicao("Você está na cozinha", _oeste = true, _norte = true),
+            Posicao("Você está na cozinha 3", _leste = true, _norte = true),
+            Posicao("Você está na cozinha 4", _oeste = true, _norte = true),
             Posicao("Você está no corredor interno", _norte = true, _sul = true),
             Posicao(
                 "Você está na sala do trono. Tem um Goblin que gosta de café doce aqui...",
@@ -257,7 +264,7 @@ class Tabuleiro {
             )
         ),
         arrayOf<Posicao>(
-            Posicao("Você está no quarto escuro", _sul = true),
+            Posicao("Você está no quarto escuro", _sul = true, _leste = true),
             Posicao("Você está no corredor interno", _leste = true, _oeste = true, _sul = true),
             Posicao("Você está no corredor interno", _norte = true, _sul = true, _leste = true, _oeste = true),
             Posicao("Você está no corredor interno", _oeste = true, _sul = true)
