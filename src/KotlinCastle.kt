@@ -67,14 +67,13 @@ fun ir(palavras: List<String>) {
 
         } else {
             println("Movimento não permitido!")
-    }
+        }
 
     } else {
         println("Erro !")
     }
 
     println(tabuleiro.getPosicao(x, y).descricao)
-
 
 
     if (x == 0 && y == 2) {
@@ -90,6 +89,9 @@ fun ir(palavras: List<String>) {
             println("Você possui uma vela para iluminar o quarto escuro! Aproveite para explorá-lo. ")
         } else {
             println("Você entrou em um quarto escuro sem a vela e quebrou a perna! ")
+            print("GameOver")
+            return
+
 
         }
     }
@@ -138,7 +140,7 @@ fun interpretar(palavras: List<String>) {
         abrir()
     } else if (palavras.contains("ATACAR")) {
         atacar()
-    } else if (listaCarga.contains(Coroa())) {
+    } else if ((Coroa() in listaCarga)) {
         fimDeJogo(true)
 
     } else {
@@ -163,16 +165,29 @@ fun pegar() {
         if (listaCarga.size > 3 || obj.equals(3)) {
             println("Você já está carregando 3 objetos remova 1 deles")
 
-        } else if (listaCarga.size <= 3 || obj.equals(tabuleiro.getPosicao(x, y).listaObjeto)) {
+        } else if (listaCarga.size <= 3 && !listaCarga.contains(Bau()) || obj.equals(
+                tabuleiro.getPosicao(
+                    x,
+                    y
+                ).listaObjeto
+            )
+        ) {
             println(obj)
-            listaCarga.add(obj)
-            println("${obj.desc} sendo carregado")
+            if (x == 3 && y == 3 && obj is Bau) {
+                listaCarga.remove(obj)
+                println("$obj.desc removido")
+            } else {
+                listaCarga.add(obj)
+                println("${obj.desc} sendo carregado")
+            }
 
         } else {
             println("não exite objeto aqui")
         }
 
+
     }
+
 }
 
 
@@ -200,12 +215,24 @@ fun carga() {
 
 fun abrir() {
     if (x == 3 && y == 3) {
-        if (listaCarga.contains(Chave())) {
+        var temChave = false
+        var temBau = false
+        for (obj in listaCarga) {
+            temChave = obj is Chave
+            if (temChave) {
+                break
+            }
+            temBau = obj is Bau
+            if (temBau) {
+                break
+            }
+        }
+        if (temChave) {
             println("Abrindo o baú!")
             println("Existe um pacote de Açucar dentro do baú")
             tabuleiro.getPosicao(3, 3).addObjeto(Acucar())
 
-        } else if (x == 3 && y == 3 && Chave() !in listaCarga) {
+        } else if (x == 3 && y == 3) {
             println("Você não tem as chaves para abrir o baú!")
         }
     } else {
@@ -215,22 +242,49 @@ fun abrir() {
 
 fun atacar() {
     if (x == 3 && y == 1) {
+        var temEspada = false
+        var temCafe = false
+        var temAcucar = false
 
-        if (listaCarga.contains(Espada())) {
-            print("Goblins são muito bons com espadas! Após uma longa batalha você levou a pior...")
-        } else {
-            print("Atacar um Goblin sem	uma	espada é sentença de morte... Você morreu!")
+        for (obj in listaCarga) {
+            temEspada = obj is Espada
+            if (temEspada) {
+                break
+
+            }
         }
-        if (listaCarga.contains(Cafe())) {
+        if (temEspada) {
+            println("Goblins são muito bons com espadas! Após uma longa batalha você levou a pior...")
+        } else {
+            println("Atacar um Goblin sem	uma	espada é sentença de morte... Você morreu!")
+        }
+
+        for (obj in listaCarga) {
+            temCafe = obj is Cafe
+            if (temCafe) {
+                break
+            }
+        }
+        if (temCafe) {
             println("Você deu café para o Goblin mas estava amargo! Ele gosta de café doce! Ficou furioso e você levou a pior…")
         } else {
-            print("Você não possui um café")
+            println("Você não possui um café")
+
         }
-        if (listaCarga.contains(Espada()) && listaCarga.contains(Cafe()) && listaCarga.contains(Acucar())) {
-            print("O Golbin se distraiu tomando o café doce! Você aproveitou e acabou com ele! Caminho livre!")
+
+        for (obj in listaCarga) {
+            temAcucar = obj is Acucar
+            if (temAcucar) {
+                break
+            }
+        }
+        if (temEspada && temCafe && temAcucar) {
+            goblin = false
+            println("O Golbin se distraiu tomando o café doce! Você aproveitou e acabou com ele! Caminho livre!")
         } else {
             println("Falta algum item")
         }
+
     } else {
         print("Não existe nada para atacar aqui!")
     }
@@ -250,13 +304,13 @@ class Tabuleiro {
         arrayOf<Posicao>(
             Posicao("Você está na cozinha 1", _sul = true),
             Posicao("Você está na cozinha 2", _sul = true, _leste = true),
-            Posicao("Você está no corredor interno", _oeste = true, _sul = true),
+            Posicao("Você está no corredor interno 1", _oeste = true, _sul = true),
             Posicao("Você está na sala do trono", _sul = true)
         ),
         arrayOf<Posicao>(
             Posicao("Você está na cozinha 3", _leste = true, _norte = true),
             Posicao("Você está na cozinha 4", _oeste = true, _norte = true),
-            Posicao("Você está no corredor interno", _norte = true, _sul = true),
+            Posicao("Você está no corredor interno 2", _norte = true, _sul = true),
             Posicao(
                 "Você está na sala do trono. Tem um Goblin que gosta de café doce aqui...",
                 _norte = true,
@@ -265,9 +319,9 @@ class Tabuleiro {
         ),
         arrayOf<Posicao>(
             Posicao("Você está no quarto escuro", _sul = true, _leste = true),
-            Posicao("Você está no corredor interno", _leste = true, _oeste = true, _sul = true),
-            Posicao("Você está no corredor interno", _norte = true, _sul = true, _leste = true, _oeste = true),
-            Posicao("Você está no corredor interno", _oeste = true, _sul = true)
+            Posicao("Você está no corredor interno 3", _leste = true, _oeste = true, _sul = true),
+            Posicao("Você está no corredor interno 4", _norte = true, _sul = true, _leste = true, _oeste = true),
+            Posicao("Você está no corredor interno 5", _oeste = true, _sul = true, _norte = true)
         ),
         arrayOf<Posicao>(
             Posicao("Você está no jardim", _norte = true),
