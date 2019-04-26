@@ -135,14 +135,10 @@ fun interpretar(palavras: List<String>) {
 
     } else if (palavras.contains("SOLTAR")) {
         soltar()
-
     } else if (palavras.contains("ABRIR")) {
         abrir()
     } else if (palavras.contains("ATACAR")) {
         atacar()
-    } else if ((Coroa() in listaCarga)) {
-        fimDeJogo(true)
-
     } else {
         println("Comando Invalido")
     }
@@ -175,7 +171,7 @@ fun pegar() {
             println(obj)
             if (x == 3 && y == 3 && obj is Bau) {
                 listaCarga.remove(obj)
-                println("$obj.desc removido")
+                println("${obj.desc} removido")
             } else {
                 listaCarga.add(obj)
                 println("${obj.desc} sendo carregado")
@@ -183,6 +179,9 @@ fun pegar() {
 
         } else {
             println("não exite objeto aqui")
+        }
+        if (obj is Coroa) {
+            fimDeJogo(fim)
         }
 
 
