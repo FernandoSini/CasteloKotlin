@@ -168,7 +168,7 @@ fun pegar() {
                 ).listaObjeto
             )
         ) {
-            println(obj)
+            println(obj.desc)
             if (x == 3 && y == 3 && obj is Bau) {
                 listaCarga.remove(obj)
                 println("${obj.desc} removido")
